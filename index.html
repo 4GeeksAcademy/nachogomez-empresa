@@ -3,8 +3,719 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brasaland</title>
+    <script>
+        tailwind.config = { darkMode: "class" };
+    </script>
+    <meta
+        name="description"
+        content="Brasaland: 14 restaurantes de cocina a la brasa en Colombia y Florida. Sabor consistente, servicio cálido y evolución digital con tecnología."
+    >
+    <title>Brasaland | Cocina a la Brasa en Colombia y Florida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add("dark");
+            }
+        })();
+    </script>
 </head>
-<body>
+<body class="bg-zinc-50 text-zinc-900 antialiased transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 rounded-md bg-white px-4 py-2 text-sm font-medium text-zinc-900 shadow dark:bg-zinc-900 dark:text-zinc-100">
+        Saltar al contenido
+    </a>
+
+    <header role="banner" class="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur transition-colors duration-300 dark:border-zinc-800 dark:bg-zinc-950/95">
+        <div class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="#inicio" aria-label="Brasaland Inicio" class="text-xl font-extrabold tracking-tight text-zinc-900 dark:text-white">Brasaland</a>
+
+            <nav role="navigation" aria-label="Navegación principal" class="hidden items-center gap-6 md:flex">
+                <a href="#inicio" class="text-zinc-700 transition hover:text-orange-500 dark:text-zinc-200 dark:hover:text-orange-400">Inicio</a>
+                <a href="#historia" class="text-zinc-700 transition hover:text-orange-500 dark:text-zinc-200 dark:hover:text-orange-400">Nuestra Historia</a>
+                <a href="#sedes" class="text-zinc-700 transition hover:text-orange-500 dark:text-zinc-200 dark:hover:text-orange-400">Sedes</a>
+                <a href="#equipo" class="text-zinc-700 transition hover:text-orange-500 dark:text-zinc-200 dark:hover:text-orange-400">Súmate al Equipo</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <button
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Cambiar entre modo claro y modo oscuro"
+                    class="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-orange-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                >
+                    🌙 Modo oscuro
+                </button>
+                <a
+                    href="application.html"
+                    aria-label="Ir al formulario de postulación"
+                    class="inline-flex items-center justify-center rounded-lg bg-orange-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-950"
+                >
+                    Postularse
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-zinc-200 px-4 py-2 md:hidden dark:border-zinc-800">
+            <nav role="navigation" aria-label="Navegación móvil" class="mx-auto flex w-full max-w-7xl gap-4 overflow-x-auto text-sm">
+                <a href="#inicio" class="whitespace-nowrap text-zinc-700 dark:text-zinc-200">Inicio</a>
+                <a href="#historia" class="whitespace-nowrap text-zinc-700 dark:text-zinc-200">Nuestra Historia</a>
+                <a href="#sedes" class="whitespace-nowrap text-zinc-700 dark:text-zinc-200">Sedes</a>
+                <a href="#equipo" class="whitespace-nowrap text-zinc-700 dark:text-zinc-200">Súmate al Equipo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" role="main">
+        <section id="inicio" aria-labelledby="hero-title" class="relative isolate overflow-hidden bg-zinc-950">
+            <img
+                src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1800&q=80"
+                alt="Parrilla moderna encendida en cocina profesional"
+                class="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
+            >
+            <div class="absolute inset-0 -z-10 bg-gradient-to-r from-zinc-950 via-zinc-900/85 to-red-950/70"></div>
+
+            <div class="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+                <p class="inline-flex rounded-full border border-orange-400/40 bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-orange-300">
+                    14 restaurantes • Colombia + Florida
+                </p>
+                <h1 id="hero-title" class="mt-6 max-w-4xl text-3xl font-extrabold leading-tight text-white sm:text-5xl">
+                    El sabor de la brasa que une Medellín y Miami con la misma calidad en cada plato.
+                </h1>
+                <p class="mt-5 max-w-3xl text-base text-zinc-200 sm:text-lg">
+                    Brasaland evoluciona hacia una experiencia más eficiente y moderna con Brasaland Digital, liderada por Mariana Restrepo, sin perder el servicio cálido y la rapidez operativa que nos define desde 2008.
+                </p>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a
+                        href="#sedes"
+                        class="inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    >
+                        Explorar Menú
+                    </a>
+                    <a
+                        href="application.html"
+                        class="inline-flex items-center justify-center rounded-lg border border-zinc-500 px-6 py-3 text-sm font-semibold text-zinc-100 transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-300"
+                    >
+                        Súmate al Equipo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" aria-labelledby="historia-title" class="py-14 sm:py-16 lg:py-20 dark:bg-zinc-950">
+            <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+                <div>
+                    <h2 id="historia-title" class="text-2xl font-bold text-zinc-900 sm:text-3xl dark:text-zinc-100">
+                        Desde Medellín en 2008, ahora con presencia binacional
+                    </h2>
+                    <p class="mt-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+                        Nuestra esencia combina cocina a la brasa, estándares consistentes y cercanía humana. Hoy operamos en Colombia y Estados Unidos para ofrecer el mismo sabor en Medellín o Florida.
+                    </p>
+                    <p class="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-300">
+                        Con Brasaland Digital, incorporamos dashboards e IA para optimizar tiempos, garantizar calidad y tomar decisiones más rápidas en cada restaurante.
+                    </p>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-700">
+                    <img
+                        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80"
+                        alt="Plato gourmet servido en restaurante contemporáneo"
+                        class="h-full w-full object-cover"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section id="sedes" aria-labelledby="beneficios-title" class="bg-white py-14 sm:py-16 lg:py-20 dark:bg-zinc-900">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 id="beneficios-title" class="text-2xl font-bold text-zinc-900 sm:text-3xl dark:text-zinc-100">Brasaland en acción: sabor, innovación y excelencia</h2>
+                <p class="mt-3 max-w-3xl text-zinc-600 dark:text-zinc-300">
+                    Operamos con una receta clara: experiencia cálida al cliente y precisión operativa para que cada visita se sienta impecable.
+                </p>
+
+                <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <article aria-label="Sabor Binacional" class="rounded-2xl border border-zinc-200 p-6 shadow-sm transition hover:shadow-md dark:border-zinc-700 dark:bg-zinc-950/40">
+                        <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100 text-sm font-bold text-orange-700">01</div>
+                        <h3 class="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">Sabor Binacional</h3>
+                        <p class="mt-2 text-zinc-700 dark:text-zinc-300">
+                            La misma calidad y calidez en Medellín y Florida, con procesos que preservan el sabor auténtico de la brasa en cada sede.
+                        </p>
+                    </article>
+
+                    <article aria-label="Innovación a la Brasa" class="rounded-2xl border border-zinc-200 p-6 shadow-sm transition hover:shadow-md dark:border-zinc-700 dark:bg-zinc-950/40">
+                        <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-sm font-bold text-red-700">02</div>
+                        <h3 class="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">Innovación a la Brasa</h3>
+                        <p class="mt-2 text-zinc-700 dark:text-zinc-300">
+                            Usamos dashboards e IA para monitorear cocina, servicio y tiempos de entrega, logrando pedidos perfectos y a tiempo.
+                        </p>
+                    </article>
+
+                    <article aria-label="Cultura de Excelencia" class="rounded-2xl border border-zinc-200 p-6 shadow-sm transition hover:shadow-md md:col-span-2 lg:col-span-1 dark:border-zinc-700 dark:bg-zinc-950/40">
+                        <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-200 text-sm font-bold text-zinc-800">03</div>
+                        <h3 class="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">Cultura de Excelencia</h3>
+                        <p class="mt-2 text-zinc-700 dark:text-zinc-300">
+                            Un equipo de 115 personas formadas con altos estándares internacionales para sostener una experiencia consistente y memorable.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sedes-carrusel" aria-labelledby="sedes-carrusel-title" class="bg-zinc-100 py-14 sm:py-16 lg:py-20 dark:bg-zinc-950">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex items-end justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-orange-600 dark:text-orange-300">Nuestras Sedes</p>
+                        <h2 id="sedes-carrusel-title" class="mt-2 text-2xl font-bold text-zinc-900 sm:text-3xl dark:text-zinc-100">Recorre Brasaland en Medellín y Florida</h2>
+                    </div>
+                </div>
+                <p class="mt-3 max-w-3xl text-zinc-600 dark:text-zinc-300">
+                    Desliza para descubrir espacios modernos donde la calidez de la brasa se combina con una operación digital precisa.
+                </p>
+
+                <div class="relative mt-8">
+                    <div class="flex flex-nowrap snap-x snap-mandatory gap-4 overflow-x-auto pb-2 pr-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en el barrio El Poblado, Medellín"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland El Poblado</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Carrera 43A #8-31, Medellín</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Laureles, Medellín"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Laureles</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Circular 2 #70-22, Medellín</p>
+                                <p class="mt-3 inline-flex rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-900/75 dark:text-rose-200">Cerrado</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Envigado, Antioquia"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Envigado</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Carrera 43 #30 Sur-15, Envigado</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Sabaneta, Antioquia"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Sabaneta</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Calle 68 Sur #43A-09, Sabaneta</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Belén, Medellín"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Belén</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Avenida 80 #30-66, Medellín</p>
+                                <p class="mt-3 inline-flex rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-900/75 dark:text-rose-200">Cerrado</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en el Centro de Medellín"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Centro</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Calle 50 #49-28, Medellín</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Robledo, Medellín"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Robledo</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Carrera 80 #65-40, Medellín</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Aranjuez, Medellín"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Aranjuez</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Carrera 49 #92-14, Medellín</p>
+                                <p class="mt-3 inline-flex rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-900/75 dark:text-rose-200">Cerrado</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Buenos Aires, Medellín"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-emerald-100/95 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/85 dark:text-emerald-200">Colombia 🇨🇴</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Buenos Aires</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Calle 49 #31-25, Medellín</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Brickell, Miami"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-sky-100/95 px-2.5 py-1 text-xs font-semibold text-sky-800 dark:bg-sky-900/80 dark:text-sky-200">USA 🇺🇸</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Miami (Brickell)</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">901 Brickell Ave, Miami, FL</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Coral Gables, Miami"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-sky-100/95 px-2.5 py-1 text-xs font-semibold text-sky-800 dark:bg-sky-900/80 dark:text-sky-200">USA 🇺🇸</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Miami (Coral Gables)</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">242 Miracle Mile, Coral Gables, FL</p>
+                                <p class="mt-3 inline-flex rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-900/75 dark:text-rose-200">Cerrado</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Doral, Florida"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-sky-100/95 px-2.5 py-1 text-xs font-semibold text-sky-800 dark:bg-sky-900/80 dark:text-sky-200">USA 🇺🇸</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Doral</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">8550 NW 53rd St, Doral, FL</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Orlando, Florida"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-sky-100/95 px-2.5 py-1 text-xs font-semibold text-sky-800 dark:bg-sky-900/80 dark:text-sky-200">USA 🇺🇸</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Orlando</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">7600 Dr Phillips Blvd, Orlando, FL</p>
+                                <p class="mt-3 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">Abierto</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-900">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sede Brasaland en Weston, Florida"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-sky-100/95 px-2.5 py-1 text-xs font-semibold text-sky-800 dark:bg-sky-900/80 dark:text-sky-200">USA 🇺🇸</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Brasaland Weston</h3>
+                                <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">1675 Market St, Weston, FL</p>
+                                <p class="mt-3 inline-flex rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-900/75 dark:text-rose-200">Cerrado</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-zinc-100 to-transparent dark:from-zinc-950"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-carrusel" aria-labelledby="menu-carrusel-title" class="bg-white py-14 sm:py-16 lg:py-20 dark:bg-zinc-900">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex items-end justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-red-600 dark:text-red-300">Especialidades a la Brasa</p>
+                        <h2 id="menu-carrusel-title" class="mt-2 text-2xl font-bold text-zinc-900 sm:text-3xl dark:text-zinc-100">Menú estrella con sabor ahumado</h2>
+                    </div>
+                </div>
+                <p class="mt-3 max-w-3xl text-zinc-600 dark:text-zinc-300">
+                    Platos icónicos cocinados a la brasa con control de calidad en tiempo real para mantener textura, jugosidad y punto perfecto.
+                </p>
+
+                <div class="relative mt-8">
+                    <div class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 pr-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Punta de anca premium a la brasa servida con guarnición"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-orange-100/95 px-2.5 py-1 text-xs font-semibold text-orange-800 dark:bg-orange-900/80 dark:text-orange-200">Brasa</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Punta de Anca premium</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Corte marmoleado, sellado al carbón con mantequilla de ajo rostizado.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$69.000 COP / $18 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Costillas ahumadas en leña con glaseado oscuro"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-orange-100/95 px-2.5 py-1 text-xs font-semibold text-orange-800 dark:bg-orange-900/80 dark:text-orange-200">Brasa</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Costillas ahumadas en leña</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Costillas cocinadas a fuego lento por 8 horas y terminadas al grill.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$58.000 COP / $15 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Hamburguesa Brasa Especial con queso fundido y pan brioche"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-orange-100/95 px-2.5 py-1 text-xs font-semibold text-orange-800 dark:bg-orange-900/80 dark:text-orange-200">Brasa</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Hamburguesa Brasa Especial</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Blend de res, tocineta crocante y salsa ahumada de la casa.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$39.000 COP / $10 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Lomo al trapo cortado en medallones con sal gruesa"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-orange-100/95 px-2.5 py-1 text-xs font-semibold text-orange-800 dark:bg-orange-900/80 dark:text-orange-200">Brasa</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Lomo al trapo</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Lomo sellado en costra de sal para una textura intensa y jugosa.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$64.000 COP / $17 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1624353339006-0850c99f9293?auto=format&fit=crop&q=80&w=800"
+                                    alt="Volcán de chocolate caliente con helado de vainilla fundido"
+                                    loading="lazy"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-pink-100/95 px-2.5 py-1 text-xs font-semibold text-pink-700 dark:bg-pink-900/80 dark:text-pink-200">Postre</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Volcán de chocolate con helado de vainilla</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Bizcocho tibio de centro líquido y contraste cremoso de vainilla.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$24.000 COP / $6 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Cheesecake de frutos rojos con salsa de mora"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-pink-100/95 px-2.5 py-1 text-xs font-semibold text-pink-700 dark:bg-pink-900/80 dark:text-pink-200">Postre</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Cheesecake de frutos rojos</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Base crocante, queso suave y topping de berries frescos.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$22.000 COP / $6 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1523371054106-bbf80586c38c?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Limonada de coco servida fría con hielo"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-cyan-100/95 px-2.5 py-1 text-xs font-semibold text-cyan-700 dark:bg-cyan-900/80 dark:text-cyan-200">Bebida</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Limonada de coco</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Refrescante, cremosa y equilibrada con un toque cítrico tropical.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$14.000 COP / $4 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Jugo natural de lulo servido en vaso alto"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-cyan-100/95 px-2.5 py-1 text-xs font-semibold text-cyan-700 dark:bg-cyan-900/80 dark:text-cyan-200">Bebida</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Jugo natural de Lulo</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Pulpa fresca de lulo, acidez vibrante y dulzor natural.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$12.000 COP / $3 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1556855810-ac404aa91f85?auto=format&fit=crop&q=80&w=800"
+                                    alt="Cóctel Margarita servido con sal en el borde y rodaja de lima"
+                                    loading="lazy"
+                                    class="h-48 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-violet-100/95 px-2.5 py-1 text-xs font-semibold text-violet-700 dark:bg-violet-900/80 dark:text-violet-200">Bar</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Margarita de la casa</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Tequila, triple sec y cítricos frescos con escarcha de sal marina.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$28.000 COP / $8 USD</p>
+                            </div>
+                        </article>
+
+                        <article class="w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-[58%] lg:w-[32%] xl:w-[24%] dark:border-zinc-700 dark:bg-zinc-950/50">
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Gin Tonic con botánicos y rodaja de cítricos"
+                                    loading="lazy"
+                                    class="h-52 w-full object-cover"
+                                >
+                                <span class="absolute left-3 top-3 inline-flex rounded-full bg-violet-100/95 px-2.5 py-1 text-xs font-semibold text-violet-700 dark:bg-violet-900/80 dark:text-violet-200">Bar</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Gin Tonic con botánicos</h3>
+                                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Gin premium, tónica fría y aromáticos herbales de temporada.</p>
+                                <p class="mt-4 text-sm font-semibold text-orange-600 dark:text-orange-300">$31.000 COP / $9 USD</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent dark:from-zinc-900"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" aria-labelledby="cta-title" class="bg-zinc-100 py-14 sm:py-16 lg:py-20 dark:bg-zinc-950">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="relative overflow-hidden rounded-2xl bg-white p-8 shadow-xl ring-1 ring-zinc-200 sm:p-10 lg:p-12 dark:bg-zinc-900 dark:ring-zinc-700">
+                    <img
+                        src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1600&q=80"
+                        alt="Equipo de restaurante usando tablet para gestionar operaciones"
+                        class="absolute inset-0 h-full w-full object-cover opacity-10 dark:opacity-20"
+                    >
+                    <div class="relative">
+                        <h2 id="cta-title" class="text-2xl font-bold text-zinc-900 sm:text-3xl dark:text-white">Únete a la transformación de Brasaland</h2>
+                        <p class="mt-3 max-w-2xl text-zinc-700 dark:text-zinc-200">
+                            Invitamos a clientes y talentos a ser parte de una nueva etapa donde la tradición de la brasa y la tecnología trabajan juntas para elevar cada experiencia.
+                        </p>
+                        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                            <a
+                                href="application.html"
+                                class="inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                            >
+                                Quiero Postularme
+                            </a>
+                            <a
+                                href="#inicio"
+                                class="inline-flex items-center justify-center rounded-lg border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-100 dark:border-zinc-500 dark:text-zinc-100 dark:hover:bg-zinc-800"
+                            >
+                                Volver al Inicio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="bg-zinc-100 text-zinc-700 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-300">
+        <div class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div>
+                    <h3 class="font-semibold text-zinc-900 dark:text-white">Contacto</h3>
+                    <ul class="mt-3 space-y-2 text-sm">
+                        <li><a href="mailto:hola@brasaland.com" class="transition hover:text-orange-400">hola@brasaland.com</a></li>
+                        <li><a href="tel:+573001112233" class="transition hover:text-orange-400">+57 300 111 2233</a></li>
+                        <li><a href="tel:+13055551234" class="transition hover:text-orange-400">+1 305 555 1234</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-zinc-900 dark:text-white">Operaciones</h3>
+                    <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
+                        14 restaurantes en Colombia y Estados Unidos (Florida), con estándares unificados de sabor, servicio y eficiencia.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-zinc-900 dark:text-white">Redes Sociales</h3>
+                    <ul class="mt-3 space-y-2 text-sm">
+                        <li><a href="#" aria-label="Instagram Brasaland" class="transition hover:text-orange-400">Instagram</a></li>
+                        <li><a href="#" aria-label="Facebook Brasaland" class="transition hover:text-orange-400">Facebook</a></li>
+                        <li><a href="#" aria-label="LinkedIn Brasaland" class="transition hover:text-orange-400">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-zinc-300 pt-6 text-xs text-zinc-500 dark:border-zinc-800 dark:text-zinc-500">
+                © 2026 Brasaland. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FoodEstablishment",
+            "name": "Brasaland",
+            "description": "Cadena de 14 restaurantes de cocina a la brasa con presencia en Colombia y Florida.",
+            "url": "https://www.brasaland.com",
+            "foundingDate": "2008",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Medellín",
+                "addressCountry": "CO"
+            },
+            "hasPOS": [
+                {
+                    "@type": "Place",
+                    "name": "Brasaland Medellín",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Medellín",
+                        "addressRegion": "Antioquia",
+                        "addressCountry": "CO"
+                    }
+                },
+                {
+                    "@type": "Place",
+                    "name": "Brasaland Miami",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Miami",
+                        "addressRegion": "Florida",
+                        "addressCountry": "US"
+                    }
+                }
+            ],
+            "telephone": "+57 300 111 2233",
+            "email": "hola@brasaland.com"
+        }
+    </script>
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+
+        function syncThemeButton() {
+            const isDark = document.documentElement.classList.contains("dark");
+            themeToggle.textContent = isDark ? "☀️ Modo claro" : "🌙 Modo oscuro";
+            themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+        }
+
+        themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            const isDark = document.documentElement.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            syncThemeButton();
+        });
+
+        syncThemeButton();
+    </script>
 </body>
 </html>
